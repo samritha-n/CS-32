@@ -1,0 +1,30 @@
+//
+//  main.cpp
+//  Homework1
+//
+//  Created by Samritha Nagesh on 1/16/19.
+//  Copyright © 2019 Samritha Nagesh. All rights reserved.
+//
+#include "Set.h"
+#include <string>
+#include <iostream>
+#include <cassert>
+using namespace std;
+
+void test()
+{
+    Set ss;
+    assert(ss.insert("roti"));
+    assert(ss.insert("pita"));
+    assert(ss.size() == 2);
+    assert(ss.contains("pita"));
+    ItemType x = "laobing";
+    assert(ss.get(0, x)  &&  x == "pita");
+    assert(ss.get(1, x)  &&  x == "roti");
+}
+
+int main()
+{
+    test();
+    cout << "Passed all tests" << endl;
+}
