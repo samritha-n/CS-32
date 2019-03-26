@@ -1,0 +1,24 @@
+HW 4
+
+Problem 2:
+	The insert function first goes through the list and compares each item with the value to be inserted to find the first value greater than that value. Since Coord does not have a defined method to compare different Coord objects, the FirstFindAtLeast method throws an error when it reaches the comparison step. 
+
+Problem 3b:
+	If we did not have the path parameter, we would not have been able to access the sequence of MenuItems. Thus, if we called ListAll recursively with only the MenuItems, we could not print the same output. 
+
+Problem 4a:
+	The time complexity is O(N^3) because the loop traverses through N 3 times total (for each of the for loops). 
+
+Problem 4b:
+	The time complexity is still O(N^3) because the complexity of the second for-loop is now N-1, but the overall time complexity is still proportional to N^3. 
+
+Problem 5a:
+	The worst case time complexity is O(N^2) because if set1 and set2 contain no common elements, the function will have to traverse through all the elements of set1 and set2. The insert function has a complexity of O(N) because the loop in unite traverses through N times, and the unite function also traverses through N. Therefore, the overall complexity is O(N^2).
+
+Problem 5b:
+	The overall time complexity of the algorithm is O(NlogN). The complexity is basically O(4N + N log N) because each copy is O(N), the sort algorithm is O(N log N), deletion is O(N), and inserting is again O(N). Since O(NlogN) has greater complexity than O(4N), the overall time complexity is O(NlogN).    
+
+Problem 5c:
+	The overall time complexity is O(N). The two comparison operations have complexity O(1), and the two insertions have complexity O(N) each. The overall complexity is then O(1 + 1 + N + N) so it is O(N).
+
+
