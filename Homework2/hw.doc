@@ -1,0 +1,36 @@
+Samritha Nagesh
+
+																	Homework 2 Problems
+
+Problem #2
+	First 12 coordinates:
+		(3,5)
+		(3,6)
+		(3,4)
+		(2,4)
+		(1,4)
+		(1,3)
+		(1,2)
+		(1,1)
+		(2,1)
+		(3,3)
+		(4,5)
+		(5,5)
+
+Problem #4
+	First 12 coordinates:
+		(3,5)
+		(4,5)
+		(3,4)
+		(3,6)
+		(5,5)
+		(3,3)
+		(2,4)
+		(6,5)
+		(5,4)
+		(1,4)
+		(7,5)
+		(5,3)
+
+		Problem 1 uses a stack to store coordinates, while Problem 3 uses a queue. Stacks follow a Last In, First Out method of removing coordinates, so the program traverses through an entire path before starting a new path. Queues follow a First In, First Out method, so the program starts each path but doesn't traverse through all of them in entirety. 
+
