@@ -1,0 +1,143 @@
+Description:
+	- The linked list I implemented is not circular, but is doubly-linked. The m_head node points to the first item in the linked list, and the last node points to a null pointer. The Node struct contains a variable to hold the value, and variables to hold the addresses of the next and previous Nodes. The list is ordered from least to greatest. 
+
+Pseudocode:
+	- bool Set::insert(const ItemType& data){
+		create a new node with the value passed in 
+		if the list is empty
+			point the head to the new node 
+			set the next and previous pointers to null 
+			increment size 
+			return true
+		if the new node must be inserted before the current head
+			insert the new node before the current head 
+			set the new head equal to the new node
+			increment size
+			return true
+		else 
+			set a Node equal to the head 
+			for each value in the list 
+				if the list already contains the value
+					return false
+				if a value greater than the one passed in is found
+					insert the new node before the one found 
+					increment size
+					return true 
+				if reached the end of the list 
+					insert the new node
+					set its next pointer to null 
+					increment size
+					return true 
+		return false 
+
+	}
+
+	- bool Set::erase(const ItemType& data){
+		if list is empty
+			return false
+		if the head value equals data
+			if list is size 1
+				set head to null
+			else
+				set head to next node
+				set current head to null 
+			decrement size
+			return true 
+		set a Node equal to the head 
+		for each value in the list 
+			if value found
+				set the neighboring nodes to surrounding values
+				delete the value 
+				decrement size
+				return true 
+	}
+
+	- bool set::get(int i, ItemType& value) const{
+		if i is out of bounds
+			return false
+		set node temp to m_head
+		set counter to 0
+		for each value in list and while counter does not equal i
+			add to counter
+		set value to temp
+		return true
+
+	}
+
+	- bool Set::contains(const ItemType& data) const
+	{
+		Set node temp equal to m_head
+		for each value in Set
+			if value equals data
+				return true
+		return false
+	}
+
+	- void Set::swap(Set& other){
+		Swap the values of the current head with other head
+		Swap the sizes 
+	}
+
+	- void unite(const Set& s1, const Set& s2, Set& result){
+		if s1, s2, and result don't refer to the same sets
+			erase all the values in result 
+			add all the values from s1 to result using get
+			add all the values from s2 to result using get
+	}
+
+	- void subtract(const Set& s1, const Set& s2, Set& result){
+		if s1, s2, and result don't refer to the same sets
+			erase all the values in result 
+			if s2 does not contain the value in s1
+				add to result 
+	}
+
+Test Cases:
+1) 		Set ss;
+        assert(ss.insert("roti"));
+        assert(ss.insert("pita"));
+        assert(ss.size() == 2);
+        assert(ss.contains("pita"));
+        ItemType x = "laobing";
+        assert(ss.get(0, x)  &&  x == "pita");
+        assert(ss.get(1, x)  &&  x == "roti");
+
+2)		Set uls;
+        assert(uls.insert(10));
+        assert(uls.insert(20));
+        assert(uls.size() == 2);
+        assert(uls.contains(20));
+        ItemType x = 30;
+        assert(uls.get(0, x)  &&  x == 10);
+        assert(uls.get(1, x)  &&  x == 20);
+
+3)
+		Set s1;
+		s1.insert(2);
+		s1.insert(8);
+
+		Set s2;
+		s2.insert(3);
+		s2.insert(9);
+		s2.insert(2);
+
+		Set result;
+
+		unite(s1,s2,result);
+		result.dump();  	//should print out 2 8 3 9 
+
+		subtract(s1,s2,result);
+		result.dump();		//should print out 8
+
+
+
+
+
+
+
+
+
+
+
+
+
